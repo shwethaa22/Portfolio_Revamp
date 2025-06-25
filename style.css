@@ -1,4 +1,6 @@
 /* RESET + BASE */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +13,10 @@ html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: #fff;
+   scroll-padding-top: 80px;
 }
+
+
 
 /* NAVBAR */
 .custom-navbar {
@@ -235,5 +240,159 @@ html, body {
 @media (max-width: 991.98px) {
   .navbar-icons {
     display: none !important;
+  }
+}
+
+
+.playful-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.playful-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* EDUCATION SECTION */
+/* EDUCATION SECTION */
+#education {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #fff, #f7f1f1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+#education::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #e8a0bf, #ffdee9);
+  filter: blur(120px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.4;
+}
+
+#education .quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: #2a2a2a;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+#education .quote .author {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  color: #7d274b;
+  margin-top: 1rem;
+}
+
+#education .education-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Card Styling */
+.playful-card {
+  background-color: #ffffff;
+  color: #2a2a2a;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+  border: 3px solid #E8A0BF;
+  padding: 1rem;
+}
+
+.playful-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  background-color: #e8a0bf;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991px) {
+  #education .education-cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .playful-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .playful-card {
+    width: 100%;
+  }
+}
+
+
+.balloon-wrapper {
+  position: relative;
+}
+
+.balloon {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background: #fff3f8;
+  color: #5c2b2b;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  width: 260px;
+  border: 2px solid #e8a0bf;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+
+/* Speech tail */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 40%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #fff3f8;
+  border-bottom: 0;
+  margin-left: -10px;
+  transform: rotate(10deg);
+}
+
+/* Show balloon on hover */
+.balloon-wrapper:hover .balloon {
+  display: block;
+  animation: popUp 0.4s ease forwards;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(-2deg);
   }
 }
